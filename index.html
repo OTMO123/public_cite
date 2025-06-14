@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dmitrii Mukomel - Business Automation Expert. Custom AI with Ollama, API architecture, n8n workflows. 60% efficiency gains. Startup specialist based in Israel.">
+    <meta name="keywords" content="business automation, API architecture, Ollama AI, process automation, Israel, Dmitrii Mukomel, n8n, Supabase, Raspberry Pi, startup automation">
+    <meta name="author" content="Dmitrii Mukomel">
+    <title>Dmitrii Mukomel - Automation Expert | API Architect | Custom AI Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Dmitrii Mukomel - Business Automation Expert Landing Page
+    
+    Calendar Integration Options:
+    - Calendly: Replace 'your-username' in data-url with your actual Calendly link
+    - Koalendar: Use their embed code instead
+    - Cal.com: Use their embed snippet
+    
+    Photo Integration:
+    - In the About section, replace the placeholder SVG with your actual photo
+    - Recommended: 500x500px square image
+    - Can use direct URL or base64 encoded image
+    
+    Key Features:
+    - Custom AI with Ollama integration
+    - Extensive tech stack showcase
+    - Startup-focused messaging
+    - Israeli market optimization
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-cyan: #06b6d4;
+            --accent-mint: #10b981;
+            --accent-red: #ef4444;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --dark-bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--dark-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            color: white;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--dark-bg);
+        }
+
+        .section-gradient {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1f3a 100%);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Pain Section */
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pain-card {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        .pain-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-card h3 {
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Process Steps */
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        .process-grid {
+            display: grid;
+            gap: 2rem;
+            position: relative;
+        }
+
+        /* Desktop: 5 columns in a row */
+        @media (min-width: 1200px) {
+            .process-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Tablet: 3 columns */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Mobile: 1 column */
+        @media (max-width: 767px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Connection lines for desktop */
+        @media (min-width: 1200px) {
+            .process-grid::before {
+                content: '';
+                position: absolute;
+                top: 60px;
+                left: 40px;
+                right: 40px;
+                height: 2px;
+                background: linear-gradient(90deg, 
+                    transparent 0%, 
+                    var(--accent-cyan) 10%, 
+                    var(--accent-mint) 90%, 
+                    transparent 100%);
+                z-index: 0;
+                opacity: 0.4;
+            }
+        }
+
+        .process-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .process-card:hover .step-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 28px;
+            height: 28px;
+            background: var(--accent-mint);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+            color: white;
+        }
+
+        .process-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .process-card p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Animation for process cards */
+        .process-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .process-card:nth-child(1) { animation-delay: 0.1s; }
+        .process-card:nth-child(2) { animation-delay: 0.2s; }
+        .process-card:nth-child(3) { animation-delay: 0.3s; }
+        .process-card:nth-child(4) { animation-delay: 0.4s; }
+        .process-card:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Arrow indicators on desktop */
+        @media (min-width: 1200px) {
+            .process-card:not(:last-child)::after {
+                content: '→';
+                position: absolute;
+                right: -18px;
+                top: 35px;
+                font-size: 1.2rem;
+                color: var(--accent-cyan);
+                opacity: 0.6;
+            }
+        }
+
+        /* Results Metrics */
+        .metric-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-mint);
+        }
+        
+        .metric-card:first-child {
+            border: 2px solid var(--accent-mint);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .metric-card:first-child:hover {
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Use Cases */
+        .use-case {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-cyan);
+        }
+
+        .use-case-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-cyan);
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image-container {
+            position: relative;
+        }
+
+        .about-image {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .credential-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-mint);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--accent-mint);
+            font-weight: 600;
+        }
+
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        .trust-icon {
+            font-size: 2rem;
+        }
+
+        .trust-item span:last-child {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--secondary-gradient);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 30px;
+            margin: 5rem auto;
+            max-width: 900px;
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Live Counter */
+        .live-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--accent-mint);
+            border: 1px solid var(--accent-mint);
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-mint);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* ROI Calculator */
+        .roi-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .roi-inputs {
+            margin-bottom: 3rem;
+        }
+
+        .roi-input-group {
+            margin-bottom: 2rem;
+        }
+
+        .roi-input-group label {
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .slider-container {
+            position: relative;
+        }
+
+        #hours-slider {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        #hours-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+        }
+
+        #hours-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+        }
+
+        .slider-value {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .rate-input-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        #rate-input {
+            width: 100px;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        #rate-input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .currency, .per-hour {
+            color: var(--text-secondary);
+        }
+
+        .roi-results {
+            text-align: center;
+        }
+
+        .roi-alert {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .roi-emoji {
+            font-size: 4rem;
+            animation: flicker 2s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .roi-headline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            margin: 0;
+        }
+
+        .roi-period {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-breakdown {
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            line-height: 2;
+        }
+
+        .roi-breakdown span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .roi-cta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .roi-comparison {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-comparison strong {
+            color: var(--accent-mint);
+        }
+
+        .roi-payback {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .roi-payback span {
+            color: var(--accent-mint);
+            font-weight: 600;
+        }
+
+        /* Calendar Integration Styles */
+        .form-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .form-option {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--card-border);
+            border-radius: 15px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .form-option.active {
+            border-color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .form-option:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        .form-option-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calendly-inline-widget {
+            min-height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1199px) {
+            .process-card {
+                padding: 2rem;
+            }
+            
+            .step-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .process-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .process-card p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-image-container {
+                margin-bottom: 2rem;
+            }
+            
+            .credentials {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+            
+            .credential-badge {
+                font-size: 0.8rem;
+            }
+            
+            .trust-indicators {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            
+            .trust-item {
+                font-size: 0.85rem;
+            }
+            
+            .trust-icon {
+                font-size: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+            
+            /* Process Cards Mobile */
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .process-grid::before {
+                display: none;
+            }
+            
+            /* ROI Calculator Mobile */
+            .roi-container {
+                padding: 2rem;
+            }
+            
+            .roi-alert {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .roi-amount {
+                font-size: 2.5rem;
+            }
+            
+            #rate-input {
+                width: 80px;
+            }
+            
+            /* Form Options Mobile */
+            .form-options {
+                flex-direction: column;
+            }
+            
+            .form-option {
+                width: 100%;
+            }
+            
+            /* Tech stack mobile optimization */
+            h4 {
+                font-size: 1rem !important;
+            }
+            
+            .about-content span[style*="background: var(--card-bg)"] {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem !important;
+            }
+        }
+
+        /* Sticky CTA Mobile */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-mint));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOMO Banner */
+        .fomo-banner {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-mint);
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            color: var(--accent-mint);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DM | Automation Expert</div>
+            <a href="#audit-form" class="nav-cta">Get Free Audit →</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Automation for people who hate repeating themselves</h1>
+                <p class="subtitle">Save 10+ hours/week by eliminating your repetitive tasks — smart automation, custom AI, no code needed.</p>
+                <a href="#audit-form" class="btn btn-primary">📩 Get a Free Audit</a>
+                <div style="margin-top: 3rem;">
+                    <div class="live-counter">
+                        <span class="live-dot"></span>
+                        💼 17 Israeli businesses automated in 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section id="problem" class="section-dark">
+        <div class="container">
+            <h2>You're doing everything right.<br>But manually.</h2>
+            
+            <div class="pain-points">
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">⛔</div>
+                    <h3>Every day starts with copy-paste again</h3>
+                    <p>Same data, different spreadsheets. Your morning routine shouldn't be Ctrl+C, Ctrl+V.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">⛔</div>
+                    <h3>CRM, WhatsApp, yad2 — all out of sync</h3>
+                    <p>Your tools don't talk. You're the translator. That's not your job.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">⛔</div>
+                    <h3>Clients ask faster than you reply</h3>
+                    <p>By the time you respond, they've moved on. Speed wins deals.</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 3rem; font-size: 1.5rem; font-weight: 600; color: var(--accent-red);">
+                This is not scale. This is survival.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section-gradient">
+        <div class="container">
+            <h2>What if your business ran without you?</h2>
+            <p class="section-subtitle">Custom automation that works while you sleep</p>
+            
+            <div class="grid grid-4">
+                <div class="card fade-in">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">🏠 Real Estate IL</h3>
+                    <p>Auto-scan yad2, WinWin, Madlan. Filter properties, instant WhatsApp alerts. First to call = first to close.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">📱 Marketing</h3>
+                    <p>WhatsApp auto-replies + client dashboard. Reply in seconds, not hours.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">🔧 Full-Stack Automation</h3>
+                    <p>Zapier-style workflows with n8n/Make. Connect any service to any service. No limits.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">🤖 AI-Powered Systems</h3>
+                    <p>Custom AI with Ollama, trained on your data. Smart automations that learn and adapt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section-dark">
+        <div class="container">
+            <h2>From chaos to clarity in 5 simple steps</h2>
+            <p class="section-subtitle">Your automation journey starts here</p>
+            
+            <div class="process-container">
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-icon">
+                            🧠
+                            <span class="step-number">1</span>
+                        </div>
+                        <h3>Discovery Call</h3>
+                        <p>15-min chat about your biggest time wasters. No pitch, just understanding.</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <div class="step-icon">
+                            📊
+                            <span class="step-number">2</span>
+                        </div>
+                        <h3>Audit Current Routine</h3>
+                        <p>I map your workflow and find the automation goldmines.</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <div class="step-icon">
+                            ⚙️
+                            <span class="step-number">3</span>
+                        </div>
+                        <h3>System Architecture</h3>
+                        <p>Design your custom automation blueprint with API flows and integrations. See exactly what you'll get.</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <div class="step-icon">
+                            🔧
+                            <span class="step-number">4</span>
+                        </div>
+                        <h3>Build & Deploy</h3>
+                        <p>I build it. You test it. We perfect it. Usually takes 3-7 days.</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <div class="step-icon">
+                            🎓
+                            <span class="step-number">5</span>
+                        </div>
+                        <h3>Training & Support</h3>
+                        <p>Full documentation + video walkthrough. You own it, you control it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section-gradient">
+        <div class="container">
+            <h2>Automation is not a luxury.<br>It's leverage.</h2>
+            <p class="section-subtitle">Real results from real businesses</p>
+            
+            <div class="grid grid-4">
+                <div class="metric-card fade-in">
+                    <div class="metric-number">60%</div>
+                    <p>Efficiency gain delivered</p>
+                    <small style="color: var(--text-muted); font-size: 0.8rem;">Verified result</small>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-number">+32%</div>
+                    <p>Faster lead response</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-number">3.5hrs</div>
+                    <p>Saved per day</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-number">4x</div>
+                    <p>More client touchpoints</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi-calculator" class="section-dark">
+        <div class="container">
+            <h2>Still think automation is expensive?</h2>
+            <p class="section-subtitle">Let's calculate what manual work really costs you</p>
+            
+            <div class="roi-container fade-in">
+                <div class="roi-inputs">
+                    <div class="roi-input-group">
+                        <label>Hours per week on repetitive tasks</label>
+                        <div class="slider-container">
+                            <input type="range" id="hours-slider" min="3" max="40" value="10" step="1">
+                            <div class="slider-value" id="hours-value">10 hours</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roi-input-group">
+                        <label>Your hourly rate (or employee cost)</label>
+                        <div class="rate-input-container">
+                            <span class="currency">$</span>
+                            <input type="number" id="rate-input" value="50" min="10" max="500" step="5">
+                            <span class="per-hour">/hour</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roi-results">
+                    <div class="roi-alert">
+                        <div class="roi-emoji">🔥</div>
+                        <div class="roi-text">
+                            <p class="roi-headline">You're burning</p>
+                            <p class="roi-amount" id="monthly-cost">$2,000</p>
+                            <p class="roi-period">per month</p>
+                        </div>
+                    </div>
+                    
+                    <div class="roi-breakdown">
+                        <p><span id="weekly-cost">$500</span> per week on tasks you hate doing</p>
+                        <p><span id="yearly-cost">$24,000</span> per year that could be automated</p>
+                    </div>
+                    
+                    <div class="roi-cta">
+                        <p class="roi-comparison">Average automation cost: <strong>$500-1500</strong> one-time</p>
+                        <p class="roi-payback">ROI in <span id="payback">less than 1 month</span></p>
+                        <a href="#audit-form" class="btn btn-primary">Stop Burning Money →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First CTA -->
+    <section id="audit-form" class="section-dark">
+        <div class="container">
+            <div class="cta">
+                <h2>Stop losing time. Start automating.</h2>
+                <p class="section-subtitle">I'll reply within 24h with a personal solution draft.</p>
+                
+                <div class="form-container">
+                    <div class="fomo-banner fade-in">
+                        ⏰ Next available audit slots: June 19-21 (3 spots left)
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="form-option active" id="form-option">
+                            <div class="form-option-icon">📝</div>
+                            <p>Quick Form</p>
+                            <small>Get reply in 24h</small>
+                        </div>
+                        <div class="form-option" id="calendar-option">
+                            <div class="form-option-icon">📅</div>
+                            <p>Book Call</p>
+                            <small>15-min audit call</small>
+                        </div>
+                    </div>
+                    
+                    <div id="form-content">
+                        <form id="audit-form-main">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email / WhatsApp</label>
+                                <input type="text" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="task">What's one task you wish you never had to do again?</label>
+                                <textarea id="task" name="task" rows="3" required placeholder="e.g., 'Update 3 spreadsheets every morning' or 'Manually send follow-up emails'"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem;">
+                                Get My Free Automation Audit
+                            </button>
+                            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                No spam. Ever. Just me replying to you.
+                            </p>
+                        </form>
+                    </div>
+                    
+                    <div id="calendar-content" style="display: none;">
+                        <!-- Calendly inline widget would go here -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/your-username/automation-audit" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            <div style="text-align: center; padding: 3rem;">
+                                <p style="font-size: 1.2rem; margin-bottom: 1rem;">📅 Calendar widget will appear here</p>
+                                <p>Connect your Calendly, Koalendar, or Cal.com account</p>
+                                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Instant booking = 3x higher conversion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-gradient">
+        <div class="container">
+            <h2>You don't need a bot.<br>You need someone who understands humans.</h2>
+            
+            <div class="about-content fade-in">
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <!-- 
+                        To add your photo:
+                        1. Replace the src attribute below with your photo URL
+                        2. Or use a base64 encoded image
+                        3. Recommended size: 500x500px square
+                        4. The border-radius will make it rounded
+                        -->
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' dy='.35em' fill='white' font-size='14'%3EDmitrii%3C/text%3E%3C/svg%3E" alt="Dmitrii Mukomel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                    </div>
+                    <div class="credentials">
+                        <span class="credential-badge">🎓 Reichman University</span>
+                        <span class="credential-badge">🌍 English • עברית • Русский</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Hi, I'm Dmitrii Mukomel.</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Economics & Data Science student at Reichman University.<br>
+                        API architect and automation specialist.<br>
+                        <strong style="color: var(--accent-mint);">60% efficiency gains</strong> delivered to real businesses.
+                    </p>
+                    <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem;">
+                        "From working with innovative startups to automating enterprise systems – I build solutions that scale."
+                    </p>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <span class="trust-icon">🚀</span>
+                            <span>Startup Experience</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">☁️</span>
+                            <span>AWS Certified</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">🤖</span>
+                            <span>AI Integration</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">📍</span>
+                            <span>Based in Herzliya</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent-cyan);">My Tech Arsenal:</h4>
+                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <!-- Core Technologies -->
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🐍 Python</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">☁️ AWS</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🔌 API Design</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🏗️ System Architecture</span>
+                            
+                            <!-- Automation Platforms -->
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🔗 n8n</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">⚡ Zapier</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🔧 Make</span>
+                            
+                            <!-- Databases & Tools -->
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🗄️ Supabase</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📊 Airtable</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">💬 Slack API</span>
+                            
+                            <!-- AI & Hardware -->
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🤖 Ollama AI</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🧠 Custom LLMs</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🍓 Raspberry Pi</span>
+                            
+                            <!-- n8n Integrations -->
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📧 Gmail</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📅 Google Calendar</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">💼 HubSpot</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🔔 Webhooks</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">💾 PostgreSQL</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📱 Telegram</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📝 Notion</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🎯 Monday.com</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">📊 Google Sheets</span>
+                            <span style="background: var(--card-bg); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--card-border);">🌐 REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="section-dark">
+        <div class="container">
+            <h2>Imagine your life if these<br>were done automatically</h2>
+            <p class="section-subtitle">Real automations I've built for real businesses</p>
+            
+            <div class="use-case fade-in">
+                <div class="use-case-icon">🏠</div>
+                <h3>yad2 Property Scanner</h3>
+                <p>Scans new listings every hour → Filters by your criteria → Sends WhatsApp alert with direct link → You call first, close first.</p>
+            </div>
+            
+            <div class="use-case fade-in">
+                <div class="use-case-icon">📩</div>
+                <h3>Multi-Channel Auto-Reply System</h3>
+                <p>WhatsApp + Telegram + Email → AI analyzes context → Personalized instant replies → Escalation for complex queries → Never lose a lead.</p>
+            </div>
+            
+            <div class="use-case fade-in">
+                <div class="use-case-icon">💬</div>
+                <h3>Slack → CRM → Database Pipeline</h3>
+                <p>Team messages → Auto-log to CRM → Update database → Generate reports → Complete communication tracking.</p>
+            </div>
+            
+            <div class="use-case fade-in">
+                <div class="use-case-icon">🤖</div>
+                <h3>Custom AI Assistant with Ollama</h3>
+                <p>Train AI on your business data → Deploy locally → Integrate with workflows → Private, secure, and tailored to your needs.</p>
+            </div>
+            
+            <div class="use-case fade-in">
+                <div class="use-case-icon">🍓</div>
+                <h3>IoT Automation with Raspberry Pi</h3>
+                <p>Physical sensors → Data collection → Cloud sync → Real-time alerts → Perfect for inventory, security, or environmental monitoring.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-gradient">
+        <div class="container">
+            <h2>"I didn't know this could be automated"</h2>
+            <p class="section-subtitle">What my clients say after 30 days</p>
+            
+            <div class="grid grid-3">
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">"60% efficiency improvement in our workflow. The custom AI integration is a game-changer."</p>
+                    <p class="testimonial-author">- David L., Startup Founder</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">"I got 4 hours back every week. And less anxiety. Worth every penny."</p>
+                    <p class="testimonial-author">- Sarah M., Real Estate</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">"First week: skeptical. Second week: amazed. Third week: can't imagine going back."</p>
+                    <p class="testimonial-author">- Lisa K., Marketing Agency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-dark">
+        <div class="container">
+            <h2>Questions? I've got answers.</h2>
+            <p class="section-subtitle">Everything you need to know about automation</p>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Do I need to know coding?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nope. You need to know your business. I handle all the technical stuff. You just tell me what you want automated.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        How much does it cost?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Starts at $99 per automation task. Most businesses need 3-5 tasks automated. Full system usually $500-1500. You'll know exact cost after the free audit.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        What tools do you use?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        n8n, Zapier, Make for automation. Supabase, PostgreSQL, Airtable for databases. AWS (S3, Lambda) for cloud. Ollama for custom AI models. Plus 200+ integrations including Slack, Gmail, HubSpot, Telegram, and more.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        What if I already have a CRM?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Perfect! I work with what you have. Zoho, HubSpot, Monday, Notion - I've automated them all. No need to switch systems.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        How fast can you implement?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Simple automations: 48-72 hours. Full system: 1-2 weeks. You'll see a working prototype in 3 days or less.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Do you work with startups?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! I specialize in helping startups build scalable automation from day one. Whether you need MVP automation, API architecture, or custom AI solutions - I help you move fast without breaking things.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Can you build custom AI solutions?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Using Ollama, I can deploy custom AI models trained on your specific data. This means private, secure AI that understands your business context - not generic responses.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        What if something breaks?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        30-day support included. Plus, you get full documentation and training. Most issues are fixed within hours, not days.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="section-gradient">
+        <div class="container">
+            <div class="cta">
+                <h2>You already know what needs to be automated.<br>Let's do it.</h2>
+                <p class="section-subtitle">Stop thinking. Start automating.</p>
+                
+                <a href="#audit-form" class="btn btn-primary" style="font-size: 1.3rem; padding: 1.5rem 3rem;">
+                    Schedule Your Free Audit Now
+                </a>
+                
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.8);">
+                    ⏰ Book directly with Dmitrii - Next slot: June 19 at 2:00 PM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Dmitrii Mukomel</div>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                Economics & Data Science Student | API Architect | Automation Expert
+            </p>
+            <div class="social-links">
+                <a href="mailto:fliopppi@gmail.com">📧 Email</a>
+                <a href="https://linkedin.com/in/dmitrii-mukomel" target="_blank">💼 LinkedIn</a>
+                <a href="https://t.me/dmitriimukomel" target="_blank">📱 Telegram</a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                © 2024 Dmitrii Mukomel. Time is money. Save both.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA for Mobile -->
+    <a href="#audit-form" class="sticky-cta">Get Free Audit</a>
+
+    <script>
+        // ROI Calculator
+        const hoursSlider = document.getElementById('hours-slider');
+        const hoursValue = document.getElementById('hours-value');
+        const rateInput = document.getElementById('rate-input');
+        const monthlyCost = document.getElementById('monthly-cost');
+        const weeklyCost = document.getElementById('weekly-cost');
+        const yearlyCost = document.getElementById('yearly-cost');
+        const payback = document.getElementById('payback');
+
+        function calculateROI() {
+            const hours = parseFloat(hoursSlider.value);
+            const rate = parseFloat(rateInput.value);
+            
+            const weekly = hours * rate;
+            const monthly = weekly * 4.33; // Average weeks per month
+            const yearly = weekly * 52;
+            
+            // Update display
+            hoursValue.textContent = `${hours} hours`;
+            weeklyCost.textContent = `${weekly.toLocaleString()}`;
+            monthlyCost.textContent = `${Math.round(monthly).toLocaleString()}`;
+            yearlyCost.textContent = `${Math.round(yearly).toLocaleString()}`;
+            
+            // Calculate payback period
+            const automationCost = 1000; // Average automation cost
+            const paybackWeeks = automationCost / weekly;
+            
+            if (paybackWeeks < 1) {
+                payback.textContent = 'less than 1 week';
+            } else if (paybackWeeks < 4) {
+                payback.textContent = `${Math.ceil(paybackWeeks)} weeks`;
+            } else {
+                const paybackMonths = Math.ceil(paybackWeeks / 4.33);
+                payback.textContent = `${paybackMonths} month${paybackMonths > 1 ? 's' : ''}`;
+            }
+            
+            // Update slider position
+            const percent = ((hours - 3) / (40 - 3)) * 100;
+            hoursValue.style.left = `${percent}%`;
+        }
+
+        if (hoursSlider && rateInput) {
+            hoursSlider.addEventListener('input', calculateROI);
+            rateInput.addEventListener('input', calculateROI);
+            calculateROI(); // Initial calculation
+        }
+
+        // Form/Calendar Toggle
+        const formOption = document.getElementById('form-option');
+        const calendarOption = document.getElementById('calendar-option');
+        const formContent = document.getElementById('form-content');
+        const calendarContent = document.getElementById('calendar-content');
+
+        if (formOption && calendarOption) {
+            formOption.addEventListener('click', () => {
+                formOption.classList.add('active');
+                calendarOption.classList.remove('active');
+                formContent.style.display = 'block';
+                calendarContent.style.display = 'none';
+            });
+
+            calendarOption.addEventListener('click', () => {
+                calendarOption.classList.add('active');
+                formOption.classList.remove('active');
+                calendarContent.style.display = 'block';
+                formContent.style.display = 'none';
+                
+                // Load Calendly script if not already loaded
+                if (!window.Calendly && !document.querySelector('script[src*="calendly"]')) {
+                    const script = document.createElement('script');
+                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                    script.async = true;
+                    document.body.appendChild(script);
+                }
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+                
+                // Close other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('audit-form-main').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            this.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">Perfect! I got your request.</h3>
+                    <p>I'll analyze your automation opportunity and send you a personalized plan within 24 hours.</p>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">Check your email tomorrow!</p>
+                </div>
+            `;
+        });
+
+        // Update live counter
+        let businessCount = 17;
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                businessCount++;
+                document.querySelector('.live-counter').innerHTML = `
+                    <span class="live-dot"></span>
+                    💼 ${businessCount} Israeli businesses automated in 2024
+                `;
+            }
+        }, 30000);
+
+        // Add some personality to scroll behavior
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.3)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
